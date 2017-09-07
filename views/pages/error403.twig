@@ -1,0 +1,16 @@
+{% extends 'blue_layout.twig' %}
+  {% block title %}Accès refusé{% endblock %}
+  {% block content %}
+    <div class="row">
+      <section class="section_error">
+        <h1>
+          Erreur: vous n'avez pas les droits pour accéder à cette page.
+        </h1>
+      </section>
+      {% if not session.user_id %}
+        <section class="section_login">
+          {% include 'form_login.twig' with {'wrapperStyle': true } %}
+        </section>
+      {% endif %}
+    </div>
+  {% endblock %}

@@ -1,0 +1,8 @@
+$blue: #00a0e6;
+$white: #ffffff;
+$grey: #4e4e4e;
+$grey-lighter: #8f8f8f;
+$grey-lightest: #fafafa;
+$grey-darker: #393f4c;
+$black: #000000;
+$colors: (white: $white, grey: $grey, grey-darker: $grey-darker, grey-lighter: $grey-lighter, black: $black, blue: $blue);

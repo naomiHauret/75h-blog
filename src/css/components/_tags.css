@@ -1,0 +1,19 @@
+@import '../bases/_colors.css';
+@import '../bases/_typography.css';
+
+.article__tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1.125em;
+    justify-content: space-between;
+}
+
+.article__tag {
+    font-size: $font-size--small;
+    color: $grey-lighter;
+    padding: 0.875em;
+    border-radius: 0.3575em;
+    border: solid currentColor 1px;
+    flex-grow: 1;
+    margin: 1.125em;
+}

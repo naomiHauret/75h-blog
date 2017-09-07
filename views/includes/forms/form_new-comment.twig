@@ -1,0 +1,8 @@
+{% import 'macro_form.twig' as form %}
+
+<form method='post' action='index.php'>
+  <label for="comment_content" class="label--hidden">Votre commentaire:</label>
+  <br />
+  <textarea name="comment_content" placeholder="Votre commentaire..." rows="8" cols="40" class="textarea" required></textarea>
+  {{ form.button('submit_comment', 'submit_comment', 'Publier mon commentaire', ["small", "bordered"]) }}
+</form>

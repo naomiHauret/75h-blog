@@ -1,0 +1,50 @@
+@import '../bases/_colors.css';
+@import '../bases/_typography.css';
+
+.comments-list {
+    margin-top: 4em;
+}
+
+.comment {
+    background-color: $white;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .03);
+    border-radius: 0.1875em;
+    padding: 1em 2em;
+    border: solid 1px color($grey-lightest blackness(5%));
+    margin: 2em 0;
+    color: $grey-darker;
+}
+
+.comment__meta {
+    display: flex;
+    color: $grey-lighter;
+}
+
+.comment__meta span {
+    flex-grow: 1;
+}
+
+.comment__author {
+    font-size: $font-size--small;
+}
+
+.comment__date {
+    text-align: right;
+    font-size: $font-size--extra-small;
+}
+
+.comment__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.25em;
+}
+
+.comment__actions {
+    flex-grow: 1;
+    text-align: right;
+}
+
+.comment__text {
+    flex-grow: 1;
+}

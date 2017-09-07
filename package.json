@@ -1,0 +1,43 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "A simple MySQL/Twig/PostCSS/JS Blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint assets/scripts",
+    "start": "npm build && gulp watch",
+    "build": "gulp css && gulp js",
+    "prod": "npm build && gulp img",
+    "precommit": "npm prod && npm test",
+    "prepush": "npm precommit"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "Naomi Hauret",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^7.1.3",
+    "cssnano": "^3.10.0",
+    "eslint": "^4.6.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-postcss": "^7.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0",
+    "husky": "^0.14.3",
+    "postcss-color-function": "^4.0.0",
+    "precss": "^2.0.0",
+    "pump": "^1.0.2"
+  },
+  "dependencies": {
+    "normalize.css": "^7.0.0"
+  }
+}

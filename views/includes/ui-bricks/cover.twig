@@ -1,0 +1,11 @@
+<div class="cover {% if sizeModifier|default(false) %}cover--{{ sizeModifier }}{% endif %}">
+    {% block overlay %}
+        <div class="cover__overlay"></div>
+    {% endblock overlay %}
+    
+    {% block img %}
+        <img src=" {{ src is defined ? src : placeholderCoverPath }} " alt="{{ alt is defined ? alt : 'Photo de couverture' }}" class="cover__src" />
+    {% endblock img %}
+
+    {% block content %}{% endblock content %}
+</div>

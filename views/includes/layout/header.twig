@@ -1,0 +1,22 @@
+<header class="header--bar {% if modifier|default(false) %}header--{{ modifier }}{% endif %}">
+  <div class="container">
+    {% if display-logo|default(false) == true %}
+      <div>
+        <img src="{{ assetsPath }}logo.png"  alt="Logo ECV Digital" class="logo"/>
+        [k]
+      </div>
+    {% endif %}
+
+    {% if session.user_id is defined %}
+      <a href='index.php?action=logout' method='get' name='logout' value='logout' class="link link--light">
+        <i class="fa fa-power-off" aria-hidden="true"></i>
+        Me déconnecter
+      </a>  
+    {% else %}
+      <a href='index.php?action=login' method='get' name='login' value='login' class="link link--light">
+        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+        Me connecter
+      </a> 
+    {% endif %}
+  </div>
+</header>

@@ -1,0 +1,50 @@
+@import '../bases/_colors.css';
+@import '../bases/_typography.css';
+button,
+.button {
+    border: none;
+    background: none;
+    min-width: 230px;
+    transition: 0.5s ease-in-out;
+    width: 100%;
+    border-radius: 2em;
+    padding: 1em;
+    font-family: inherit;
+    font-size: $font-size--large;
+    cursor: pointer;
+}
+
+.button--light {
+    border: solid $white 2px;
+    color: $white;
+    &:hover {
+        background-color: $white;
+        color: $blue;
+    }
+}
+
+.button--small {
+    font-size: $font-size--small;
+    padding: 0.5em 3em;
+}
+
+.button--bordered {
+    color: $blue;
+    border: solid currentColor 1px;
+}
+
+.button--circle {
+    padding: 1.15em;
+    border-radius: 100%;
+    color: $grey;
+    border: dashed currentColor 1px;
+    transition: 350ms ease-in-out;
+
+    &:hover,
+    &:focus,
+    &:active {
+        border-width: 2px;
+        border-style: solid;
+        color: $black;
+    }
+}

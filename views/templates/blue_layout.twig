@@ -1,0 +1,16 @@
+{% extends "layout.twig" %}
+
+{% block wrapper %}
+  <div class="wrap bg--blue text--white">
+    {% if session.user_id is defined %}
+      {% block header %}
+        {% include 'header.twig' with {'display-logo': false} %}
+      {% endblock header %}
+    {% endif %}
+    {% block content %}{% endblock %}
+    {% block footer %}
+      {% include 'footer.twig'  with {'style': 'blue'} %}
+    {% endblock footer %}
+  </div>
+{% endblock wrapper %}
+

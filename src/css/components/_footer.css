@@ -1,0 +1,48 @@
+@import '../bases/_colors.css';
+@import '../bases/_typography.css';
+
+footer {
+    margin-top: auto;
+    padding: 0.9375em;
+    color: $grey-lighter;
+    background-color: $white;
+    border-top: color($grey-lightest blackness(10%)) 1px solid;
+}
+
+footer .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    @media (min-width: 480px) {
+        justify-content: space-between;
+    }
+    @media(--sm) {
+        flex-direction: row;
+    }
+}
+
+footer p {
+    font-size: $font-size--small;
+    @media (--xs-only) {
+        margin-top: 2.175em;
+    }
+}
+
+.footer--blue {
+    background-color: $blue;
+    color: $white;
+    border-top: none;
+}
+
+footer .link--light {
+    color: inherit;
+}
+
+footer .fa:not(.fa-copyright) {
+    margin-right: 1.225em;
+    margin-left: 1.225em;
+    @media (--sm) {
+        margin-right: 0.9375em;
+        margin-left: 0.9375em;
+    }
+}

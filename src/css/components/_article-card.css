@@ -1,0 +1,75 @@
+@import '../bases/_colors.css';
+@import '../bases/_typography.css';
+.article-card {
+    display: flex;
+    color: $grey-darker;
+    justify-content: space-between;
+    border-bottom: solid 1px $grey-lightest;
+    padding-bottom: 2.3em;
+    margin-top: 2.3em;
+    flex-direction: column;
+    position: relative;
+    
+    @media (--sm) {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.articles-list .article-card:first-child {
+    border-top: solid 1px $grey-lightest;
+}
+
+.articles-list .article-card:last-child {
+    border-bottom: none;
+}
+
+.article-card__dates {
+    color: $grey-lighter;
+}
+
+.article-card:last-child {
+    border-bottom: none;
+}
+
+.article-card__title {
+    font-family: $serif;
+}
+
+.article-card__actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 1.5em;
+    @media (--sm) {
+        flex-direction: column;
+        justify-content: initial;
+    }
+}
+
+.article-card__hidden-anchor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.article-card__button {
+    position: relative;
+    z-index: 2;
+    margin: 0 0.5em;
+    @media (--sm) {
+        margin: 0.5em 0;
+    }
+}
+
+.article-card__hidden-anchor:hover ~ .article-card__actions .article-card__button:first-child,
+.article-card__hidden-anchor:focus ~ .article-card__actions .article-card__button:first-child,
+.article-card__hidden-anchor:active ~ .article-card__actions .article-card__button:first-child {
+    border-width: 2px;
+    border-style: solid;
+}
+.article-card__hidden-anchor:hover ~ .article-card__actions .article-card__button:first-child {
+    color: $black;
+}

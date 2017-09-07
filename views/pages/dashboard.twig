@@ -1,0 +1,23 @@
+{% extends 'dashboard_layout.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="dashboard__subheader">
+            <h1>Dashboard</h1>
+            <span class="text--blue"><i>{{ articles|length }} article{% if articles|length > 1 %}s{% endif %}</i></span>
+        </div>
+        <ul class="articles-list">
+            {% for article in articles %}
+                {% include "article-card.twig" with {
+                    "href": "index.php?action=get-article&id=" ~ article.article_id,
+                    "deleteLink": "index.php?action=delete-article&id=" ~ article.article_id,
+                    "editLink": "index.php?action=update-article&id=" ~ article.article_id,
+                    "title": article.article_title,
+                    "publicationDate": article.article_publicationdate,
+                    "lastUpdateDate": article.article_updatedate,
+
+                } %}
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock content %}

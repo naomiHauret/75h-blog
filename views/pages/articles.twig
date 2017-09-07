@@ -1,0 +1,58 @@
+{% extends 'dashboard_layout.twig' %}
+  {% block title %}Articles{% endblock %}
+  {% block header %}
+    <header>
+      {% embed "cover.twig" with {
+        "src":  assetsPath ~ "home.jpeg",
+        "alt": "Photo de couverture du blog des étudiants en Mastère Développement Web de l'ECV Digital Nantes",
+      }
+        %}
+          {% block content %}
+            <div class="cover__login-links container">
+              {% if session.user_id is defined %}
+                <a href='index.php?action=logout' method='get' name='logout' value='logout' class="link link--light">
+                  <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                  Me déconnecter
+                </a>  
+              {% else %}
+                <a href='index.php?action=login' method='get' name='login' value='login' class="link link--light">
+                  <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                  Connexion
+                </a> 
+              {% endif %}
+            </div>
+            <div class="cover__content container">
+              <h1>ECV Digital[k], le blog des étudiants du Mastère Développement Web de l'ECV Digital Nantes 🎓</h1>
+              <p> Nos articles #frontend #backend #fullstack #creative 💻💡</p>
+            </div>
+          {% endblock content %}
+      {% endembed %}
+    </header>
+    {% include "navbar.twig" with { "modifier": "blue" } %}
+  {% endblock header%}
+  {% block content %}
+      <div class="container">
+        <div class="articles-grid">
+        {% if articles is defined and articles|length > 0 %}
+          {% for article in articles %}
+              {% include "article-thumbnail.twig" with {
+                "href": "index.php?action=get-article&id=" ~ article.article_id,
+                "deleteLink": "index.php?action=delete-article&id=" ~ article.article_id,
+                "editLink": "index.php?action=update-article&id=" ~ article.article_id,
+                "title": article.article_title,
+                "author": article.user_firstname ~ " " ~ article.user_lastname,
+                "cover": article.article_coverpath,
+                "intro": article.article_intro,
+                "date": article.article_publicationdate,
+
+              } %}
+          {% endfor %}
+          {% else %}
+          <div class="text--grey-lighter">
+            ¯\_(ツ)_/¯
+            <em>Pas d'articles pour le moment, désolé dude!</em>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endblock %}

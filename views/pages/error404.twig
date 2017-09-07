@@ -1,0 +1,13 @@
+{% extends 'blue_layout.twig' %}
+  {% block title %}Page inexistante{% endblock %}
+  {% block content %}
+      <section class="section_error">
+        <div class="logo--big title--centered" >
+          <img src="./dist/assets/img/logo.png" alt="logo ECV Digital"/> [k]
+        </div>
+        <h1>La page que vous recherchez n'existe pas !</h1>
+        <p>
+          <a href="index.php?action=get-articles" class="link link--light">[ Retour au blog ]</a>
+        </p>
+      </section>
+  {% endblock %}

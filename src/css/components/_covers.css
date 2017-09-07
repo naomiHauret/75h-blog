@@ -1,0 +1,64 @@
+@import '../bases/_colors.css';
+.cover {
+    position: relative;
+    min-height: 25vh;
+    padding: 0.5em 1.25em;
+}
+
+.cover--large {
+    min-height: 45vh;
+    &::after {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 50px 50px 0 50px;
+        border-color: white transparent transparent;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        z-index: 2;
+        content: ' ';
+        transform: translateX(-50%);
+    }
+}
+
+.cover__src {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    object-fit: cover;
+    object-position: center;
+}
+
+.cover__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.cover__content,
+.cover__login-links {
+    color: $white;
+    z-index: 2;
+}
+
+.cover__login-links {
+    position: relative;
+    top: 1.5625em;
+    text-align: right;
+    margin-bottom: 3.325em;
+}
+
+.cover__content {
+    position: relative;
+    left: 0;
+    max-width: 920px;
+    margin-top: 5%;
+}

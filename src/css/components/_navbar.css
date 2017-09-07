@@ -1,0 +1,48 @@
+@import '../bases/_colors.css';
+.navigation {
+    display: flex;
+    text-align: center;
+    border-bottom: color($grey-lightest blackness(10%)) 1px solid;
+    color: $grey;
+    text-transform: uppercase;
+    font-size: $font-size--base;
+    @media (--sm) {
+        font-size: $font-size--small;
+    }
+}
+
+.navigation--blue {
+    background-color: $blue;
+    color: $white;
+}
+
+.navigation_menu {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    @media (--sm) {
+        flex-direction: row;
+    }
+}
+
+.navigation_menu-item {
+    flex-grow: 1;
+    padding: 1em 0;
+    transition: 250ms ease-in-out;
+    @media (--sm) {
+        margin: 0;
+    }
+}
+
+.navigation__anchor {
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5em 0;
+    color: inherit;
+
+    &:hover,
+    &:focus {
+        border-bottom: solid color($blue blackness(45%)) 5px;
+        color: color($blue blackness(45%))
+    }
+}

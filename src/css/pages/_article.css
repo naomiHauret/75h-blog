@@ -1,0 +1,135 @@
+@import '../bases/_colors.css';
+@import '../bases/_typography.css';
+.article__subheader {
+    margin-top: 3em;
+}
+
+.article__subheader .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2em;
+    @media (--md) {
+        flex-direction: row;
+    }
+}
+
+.article__update-container {
+    flex-grow: 1;
+    text-align: right;
+    margin: 1.5em 0 3em;
+    order: 2;
+    @media (--md) {
+        order: 3;
+        flex-grow: 0;
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+}
+
+.article-meta__title,
+.article-meta__intro {
+    font-family: $serif;
+}
+
+.article-meta__title {
+    font-size: $font-size--title;
+    color: $grey-darker;
+}
+
+.article-meta__intro {
+    font-size: $font-size--large;
+    color: $grey;
+}
+
+.article-meta__author,
+.article-meta__date {
+    flex-grow: 1;
+    font-size: $font-size--extra-small;
+}
+
+.article-meta:first-child {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    flex-grow: 1;
+    font-style: italic;
+    order: 3;
+    @media(--md) {
+        text-align: right;
+        margin: 0 1.5em;
+        order: 2;
+        align-self: center;
+    }
+}
+
+.article-meta span {
+    margin-bottom: 1.25em;
+}
+
+.article-meta:nth-child(2) {
+    order: 1;
+    @media (--md) {
+        order: initial;
+        padding-left: 2em;
+    }
+}
+
+.article__body,
+.article__comments {
+    margin: 3em 3%;
+    @media (--sm) {
+        margin: 3em 22%;
+    }
+}
+
+.article__comments form {
+    background-color: $white;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .03);
+    border-radius: 0.1875em;
+    border: solid 1px color($grey-lightest blackness(10%));
+}
+
+.article__comments textarea {
+    background-color: $white;
+    height: 50px;
+    padding: 1em 2em;
+    transition: 350ms ease-in-out;
+}
+
+.article__comments textarea:focus,
+.article__comments textarea:valid {
+    height: initial;
+    outline: none;
+}
+
+.article__comments button {
+    height: 0;
+    padding: 0;
+    color: transparent;
+    transition: 250ms ease-in-out;
+    display: block;
+    margin-left: auto;
+    margin-top: 2em;
+    margin-right: 2em;
+    width: initial;
+}
+
+.article__comments textarea:focus+button,
+.article__comments textarea:valid+button {
+    height: initial;
+    color: $blue;
+    padding: 0.5em 3em;
+    transform: translateY(-15px);
+    cursor: pointer;
+    &:hover,
+    &:focus {
+        background-color: $blue;
+        color: $white;
+    }
+}
+
+.article__tags-wrapper {
+    margin-top: 3em;
+}

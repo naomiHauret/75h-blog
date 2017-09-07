@@ -1,0 +1,35 @@
+{% macro input(label, hiddenLabel, name, type, placeholder, inputModifiers, value) %}
+    {% set modifiers = "" %}
+    {% for modifier in inputModifiers %}
+      {% set modifiers = modifiers ~ " " ~ "input--" ~ modifier %}
+    {% endfor %}
+    <div class="form_input-group">
+      <label for="{{ name }}" {% if hiddenLabel == true %}class="label--hidden"{% endif %}>{{ label }}:</label>
+      <br />
+      <input type="{{ type|default('text') }}" name="{{ name }}" value="{{ value|e }}" class="input {{ modifiers }}" placeholder="{{ placeholder|e }}" required />
+      <span id="{{ name }}"></span>
+    </div>
+    <br />
+{% endmacro %}
+
+{% macro textarea(label, hiddenLabel, name, placeholder, textareaModifiers, value, rows) %}
+  {% set modifiers = "" %}
+  {% for modifier in textareaModifiers %}
+    {% set modifiers = modifiers ~ " " ~ "textarea--" ~ modifier %}
+  {% endfor %}
+  <div class="form_input-group">
+    <label for="{{ name }}" {% if hiddenLabel == true %}class="label--hidden"{% endif %}>{{ label }}:</label>
+    <br />
+    <textarea name="{{ name }}" placeholder="{{ placeholder }}" rows="{{ rows|default(10) }}" cols="{{ cols|default(40) }}" class="textarea {{ modifiers }}" required>{{ value|e }}</textarea>
+    <span id="{{ name }}"></span>
+  </div>
+    <br />
+{% endmacro %}
+
+{% macro button(name, value, content, buttonModifiers) %}
+  {% set modifiers = "" %}
+  {% for modifier in buttonModifiers %}
+    {% set modifiers = modifiers ~ " " ~ "button--" ~ modifier %}
+  {% endfor %}
+  <button type="submit" name="{{ name }}" value="{{ value }}" class="button {{ modifiers }}">{{ content }}</button>
+{% endmacro %}

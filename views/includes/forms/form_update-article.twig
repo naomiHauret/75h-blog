@@ -1,0 +1,21 @@
+{% import 'macro_form.twig' as form %}
+{% set tags = "" %}
+{% for tag in article.article_tagslist %}
+  {% set tags = tags ~ " " ~ tag ~ ";" %}
+{% endfor %}
+<form method='post' action='index.php' enctype='multipart/form-data'>
+  {{ form.input('Titre de l\'article', true, 'article_title', 'text', 'Titre...', ['title', 'article'], article.article_title) }}
+  {{ form.textarea('Introduction de l\'article', true, 'article_intro', 'Introduction...',  ['large', 'article'], article.article_intro) }}
+
+  <div class="form_input">
+    <label for="article_cover" class="input-preview has-image" style="background-image: url('{{ article.article_coverpath|default(placeholderCoverPath) }}');">
+      <input name="article_cover" id="article_cover" class="input-preview__src" type="file" accept="image/*" />
+    </label>
+  </div>
+  <br />
+
+  {{ form.textarea('Contenu de l\'article', true, 'article_content', 'Votre contenu...', ['article'], article.article_content) }}
+  {{ form.textarea('Tags (à séparer par un point-virgule: ;)', true, 'article_tagslist', 'Front-end; Back-end; UX; ...', ['small', 'article'], tags) }}
+  {{ form.button('edit_article','edit_article', 'Editer l\'article', ['bordered'] ) }}
+
+</form>

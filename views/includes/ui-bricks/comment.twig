@@ -1,0 +1,18 @@
+<div class="comment">
+    <div class="comment__meta">
+        <span class="comment__author">{{ author }}</span>
+        <span class="comment__date">{{ date }}</span>
+    </div>
+    <div class="comment__content">
+    <p class="comment__text">
+        {{ text }}
+    </p>
+    {% if session.user_id is defined %}
+        {% if session.is_admin is defined or session.user_id == authorId %}
+        <div class="comment__actions">
+            <a href="{{ deleteLink }}" title="Supprimer ce commentaire" method="get" value="delete-comment" class="button--circle button--remove"><i class="fa fa-trash"></i></a>
+        </div>
+        {% endif %}
+    {% endif %}
+    </div>
+</div>

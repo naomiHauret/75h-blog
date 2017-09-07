@@ -1,0 +1,5 @@
+/* 1rem = 16px */
+@custom-media --xs-only (max-width: 47.9375rem);
+@custom-media --sm (min-width: 48rem);
+@custom-media --md (min-width: 64rem); 
+@custom-media --lg (min-width: 85.375em);

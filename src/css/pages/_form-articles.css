@@ -1,0 +1,91 @@
+@import '../bases/_colors.css';
+@import '../bases/_typography.css';
+
+.textarea--article:focus + span,
+.input--article:focus + span,
+.textarea--article:valid + span,
+.input--article:valid + span {
+    display: flex;
+    margin-right: 1.375em;
+}
+
+.input--article:focus + span::before,
+.textarea--article:focus + span::before,
+.input--article:valid + span::before,
+.input--article:valid:focus + span::before,
+.textarea--article:valid + span::before,
+.textarea--article:valid:focus + span::before {
+    display: flex;
+    align-self: stretch;
+    align-items: center;
+    font-size: $font-size--extra-small;
+    border-right: solid 3px currentColor;
+    padding-right: 1.375em;
+    font-family: "FontAwesome";
+}
+
+.input--article:valid + span::before,
+.textarea--article:valid + span::before  {
+    color: $grey-lighter;
+    border-color: $grey-lightest;
+}
+
+.input--article:focus + span::before,
+.textarea--article:focus + span::before  {
+    color: $grey-darker;
+}
+
+.input--article:valid:focus + span::before,
+.textarea--article:valid:focus + span::before {
+    color: $blue;
+}
+
+.input--article:focus + span::before,
+.textarea--article:focus + span::before {
+    content: "\f040";
+    font-size: $font-size--title;
+}
+
+input[name="article_title"],
+textarea[name="article_intro"] {
+    font-family: $serif;
+}
+
+input[name="article_title"]:valid + span::before,
+input[name="article_title"]:valid:focus + span::before {
+    content: "Titre";
+}
+
+textarea[name="article_intro"]:valid + span::before,
+textarea[name="article_intro"]:valid:focus + span::before {
+    content: "Introduction";
+}
+
+
+textarea[name="article_content"]:valid + span::before,
+textarea[name="article_content"]:valid:focus + span::before {
+    content: "Contenu";
+}
+
+textarea[name="article_tagslist"]:valid + span::before,
+textarea[name="article_tagslist"]:valid:focus + span::before {
+    content: "Tags (à séparer par un ; )";
+}
+
+.form-container {
+    margin-top: 5em;
+    margin-bottom: 6em;
+}
+
+.form-container .form_input-group {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.form-container button {
+    &:focus,
+    &:hover {
+        background-color: $blue;
+        color: $white;
+    }
+}

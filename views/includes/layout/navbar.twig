@@ -1,0 +1,18 @@
+<nav class='navigation {% if modifier|default(false) %} navigation--{{ modifier }}{% endif %} ' role='navigation'>
+  <ul class='navigation_menu container'>
+    <li class='navigation_menu-item'>
+      <a class='navigation__anchor' href='index.php?action=get-articles' method='get' name='get-articles' value='get-articles' title='Aller sur le blog'>Le blog</a>
+    </li>
+    {% if session.user_id is defined %}
+      <li class='navigation_menu-item'>
+        <a class='navigation__anchor' href='index.php?action=dashboard' method='get' name='dashboard' value='dashboard' title='Voir mon dashboard'>Dashboard</a>
+      </li>
+      <li class='navigation_menu-item'>
+        <a class='navigation__anchor' href='index.php?action=my-articles' method='get' name='my-articles' value='my-articles' title='Voir mes articles'>Mes articles</a>
+      </li>
+      <li class='navigation_menu-item'>
+        <a class='navigation__anchor' href='index.php?action=add-article' method='get' name='add-article' value='add-article' title='Commencer à écrire un nouvel article'>✍️ Écrire un nouvel article</a>
+      </li>
+    {% endif %}
+  </ul>
+</nav>

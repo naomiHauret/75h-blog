@@ -1,0 +1,48 @@
+@import '../bases/_colors.css';
+.bg--white {
+    background-color: $white;
+}
+
+.bg--grey-lightest {
+    background-color: $grey-lightest;
+}
+
+.bg--grey-lighter {
+    background-color: $grey-lighter;
+}
+
+.bg--grey {
+    background-color: $grey;
+}
+
+.bg--grey-darker {
+    background-color: $grey-darker;
+}
+
+.text--grey-lighter {
+    color: $grey-lighter;
+}
+
+.text--grey {
+    color: $grey;
+}
+
+.text--grey-darker {
+    color: $grey-darker;
+}
+
+.text--grey-lightest {
+    color: $grey-lightest;
+}
+
+.bg--blue {
+    background-color: $blue;
+}
+
+.text--blue {
+    color: $blue;
+}
+
+.text--white {
+    color: $white;
+}

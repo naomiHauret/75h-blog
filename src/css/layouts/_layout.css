@@ -1,0 +1,73 @@
+@import '../bases/_colors.css';
+@import '../bases/_typography.css';
+html {
+    font-size: $font-size--base;
+}
+
+body {
+    font-family: $sans-serif;
+    font-size: $font-size--base;
+    display: flex;
+    min-height: 100vh;
+}
+
+.wrap {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    margin-left: 3%;
+    margin-right: 3%;
+    @media(--sm) {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+
+.container--small {
+    margin-left: 3%;
+    margin-right: 3%;
+    @media(--sm) {
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+}
+
+.row {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 3%;
+    margin-right: 3%;
+
+    text-align: center;
+    flex-direction: column;
+    @media (--sm) {
+        flex-direction: row;
+        text-align: initial;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+}
+
+.column--centered {
+    justify-content: center;
+    align-items: center;
+}
+
+.column--2 {
+    flex-grow: 2;
+}
+
+.section_main {
+    padding: 2.1875em;
+}

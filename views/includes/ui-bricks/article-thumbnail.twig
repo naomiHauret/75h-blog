@@ -1,0 +1,16 @@
+<div class="article-thumbnail">
+  <a href="{{ href }}" method="get" value="get-article" class="article-thumbnail__href"></a>
+  <div class="article-thumbnail__cover">
+    <img src="{{  cover != "" ? cover : placeholderCoverPath  }}" alt="Couverture de l'article {{ title }}" class="article-thumbnail__src" />
+  </div>
+  <span class="article-thumbnail__author">par {{ author }}</span>
+  <div class="article-thumbnail__content">
+    <h3 class="article-thumbnail__title">{{ title }}</h3>
+    <p class="article-thumbnail__intro">
+      {{ intro }}
+    </p>
+    <div class="article-thumbnail__date">
+      <span>{{ date }}</span>
+    </div>
+  </div>
+</div>

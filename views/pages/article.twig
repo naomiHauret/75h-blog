@@ -1,0 +1,72 @@
+{% extends 'dashboard_layout.twig' %}
+
+  {% block title %} {{ article.article_title }} {% endblock %}
+  
+  {% block content %}
+    <div class="article__subheader">
+      <div class="container">
+        {% include "article-meta.twig" with {
+            "author": article.user_firstname ~ " " ~ article.user_lastname,
+            "date": article.article_publicationdate,
+            "title": article.article_title,
+            "intro": article.article_intro,
+          }
+        %}
+
+        {% if session.user_id is defined and session.user_id == article.article_authorid %}
+          <div class="article__update-container">
+            <a href="index.php?action=update-article&id={{ article.article_id }}" class="button button--small button--bordered">Modifier</a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+    {% embed "cover.twig" with {
+        "sizeModifier": "large",
+        "src":  article.article_coverpath,
+        "alt": "Photo de couverture de l'article " ~ article.article_title,
+      }
+    %}
+      {% block overlay %}{% endblock overlay %}
+      {% block content %}{% endblock content %}
+    {% endembed %}
+    <div class="article__body">
+      <p>
+        {{ article.article_content }}
+      </p>
+
+      <div class="article__tags-wrapper">
+        <h3>Tags</h3>
+        <ul class="article__tags-list">
+          {% for tag in article.article_tagslist %}
+            {% if tag|length > 0 %}
+              <li class="article__tag">{{ tag }} </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="bg--grey-lightest">
+      <div class="article__comments">
+        <h3>{{ comments|length }} commentaire{% if comments|length > 1 %}s{% endif %}</h3>
+        {% include "form_new-comment.twig" %}
+        <ul class="comments-list">
+          {% for comment in comments %}
+              <li>
+                {% set author = "Anonyme" %}
+                {% if comment.user_firstname %}
+                  {% set author =  comment.user_firstname ~ " " ~ comment.user_lastname %}
+                {% endif %}
+
+                {% include "comment.twig" with {
+                  "author": author,
+                  "date": comment.comment_date,
+                  "text": comment.comment_content,
+                  "deleteLink": "index.php?action=delete-comment&id=" ~ comment.comment_id,
+                  "authorId":  comment.comment_authorid
+                } %}
+              </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  {% endblock content %}

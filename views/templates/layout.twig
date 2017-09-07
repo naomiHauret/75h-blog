@@ -1,0 +1,28 @@
+
+<html>
+  <head>
+    {% block head %}
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>ECV Digital[k] - {% block title %}{% endblock %}</title>
+      <link href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" href="./dist/assets/stylesheets/stylesheet.min.css" type="text/css" />
+    {% endblock %}
+  </head>
+  <body>
+    {% block wrapper %}
+        <div class="wrap">
+            {% block header %}
+              {% include 'header.twig' with {"modifier" : "blue"} %}
+            {% endblock header %}
+            {% block content %}{% endblock %}
+            {% block footer %}
+              {% include 'footer.twig' %}
+            {% endblock %}
+        </div>
+    {% endblock wrapper%}
+    {% block scripts %}
+      <script src="./dist/assets/scripts/global.min.js"></script>
+    {% endblock scripts %}
+  </body>
+</html>

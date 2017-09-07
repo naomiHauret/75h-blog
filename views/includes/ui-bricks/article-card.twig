@@ -1,0 +1,20 @@
+<div class="article-card">
+  <div class="article-card__content">
+    <h2 class="article-card__title">{{ title }}</h2>
+    <div class="article-card__dates">
+      <span>Publication: {{ publicationDate }}</span>
+      <br/>
+      <span>Dernière modification: {{ lastUpdateDate }}</span>
+    </div>
+  </div>
+  
+  <a href='{{ href }}' method='get' value='get-article' title='Voir cet article' class='article-card__hidden-anchor'></a>
+
+  <div class="article-card__actions">
+    <a href='{{ href }}' method='get' value='get-article' title='Voir cet article' class='button--circle article-card__button'><i class="fa fa-eye"></i></a>
+    {% if (session.is_admin is defined  or session.user_id == authorId) %}
+      <a href='{{ editLink }}' method='get' value='edit-article' title='Modifier cet article' class='button--circle article-card__button'><i class="fa fa-pencil"></i></a>
+      <a href='{{ deleteLink }}' method='get' value='delete-article' title='Supprimer cet article' class='button--circle article-card__button button--remove'><i class="fa fa-trash"></i></a>
+    {% endif %}
+  </div>
+</div>

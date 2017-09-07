@@ -1,0 +1,17 @@
+{% import 'macro_form.twig' as form %}
+
+<form method='post' action='index.php' enctype='multipart/form-data'>
+  {{ form.input('Titre de l\'article', true, 'article_title', 'text', 'Titre...', ['title', 'article'], '') }}
+  {{ form.textarea('Introduction de l\'article', true, 'article_intro', 'Introduction...',  ['large', 'article'], '', 5) }}
+
+  <div class="form_input">
+    <label for="article_cover" class="input-preview">
+      <input name="article_cover"  id="article_cover" class="input-preview__src" type="file" accept="image/*" />
+    </label>
+  </div>
+  <br />
+
+  {{ form.textarea('Contenu de l\'article', true, 'article_content', 'Votre contenu...', ['article'], '', 25) }}
+  {{ form.textarea('Tags (à séparer par un point-virgule: ;)', true, 'article_tagslist', 'Front-end; Back-end; UX; ...', ['small', 'article'], '', 2) }}
+  {{ form.button('submit_article','submit_article', 'Publier mon article', ['bordered'] ) }}
+</form>

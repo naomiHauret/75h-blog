@@ -1,0 +1,64 @@
+@import '../bases/_colors.css';
+.header--bar .container {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0.9375em 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    @media (min-width: 480px) {
+        padding: 1.5625em 0;
+        justify-content: space-between;
+    }
+    @media (--sm) {
+        flex-direction: row;
+    }
+}
+
+.header--light {
+    background-color: $white;
+    color: $grey;
+    border-bottom: solid color($grey-lightest blackness(10%)) 1px;
+}
+
+.header--light img {
+    filter: invert(100%);
+}
+
+.header--blue {
+    background-color: $blue;
+    color: $white;
+}
+
+.header--bar a {
+    color: inherit;
+    margin-top: 1.5625em;
+    @media (--sm) {
+        margin-top: 0;
+        flex-grow: 1;
+        text-align: right;
+    }
+}
+
+header a {
+    transition: 350ms ease-in-out;
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+    }
+}
+
+.logo--big {
+    text-align: center;
+}
+
+.logo--big img {
+    width: 300px;
+}
+
+.logo {
+    width: 220px;
+    @media (min-width: 480px) {
+        width: 180px;
+    }
+}

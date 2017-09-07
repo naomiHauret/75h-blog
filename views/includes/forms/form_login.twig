@@ -1,0 +1,12 @@
+{% import 'macro_form.twig' as form %}
+<div {% if wrapperStyle is defined %}class="login-wrapper"{% endif %} >
+  <div class='logo--big title--centered' >
+    <img src='./dist/assets/img/logo.png' alt="Logo ECV Digital" />[k]
+  </div>
+  <h2 class='title--centered'>Connexion</h2>
+  <form method='post' action='index.php'>
+    {{ form.input('Votre email', false, 'user_mail', 'email', '', ['light']) }}
+    {{ form.input('Votre mot de passe', false, 'user_password', 'password', '', ['light']) }}
+    {{ form.button('submit_connexion','submit_connexion',  'Me connecter', ['light']) }}
+  </form>
+</div>

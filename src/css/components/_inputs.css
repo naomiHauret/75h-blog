@@ -1,0 +1,99 @@
+@import '../bases/_colors.css';
+textarea,
+input {
+    border: none;
+    background: none;
+    min-width: 230px;
+    transition: 0.5s;
+    width: 100%;
+    &:focus {
+        outline: none;
+    }
+}
+
+.label--hidden {
+    display: none;
+}
+
+.form_input-group {
+    margin: 1em 0;
+
+}
+
+.input--light {
+    border-bottom: solid rgba(255, 255, 255, 0.8) 2px;
+    font-style: italic;
+    color: inherit;
+}
+
+.input--light:focus,
+.input--light:hover {
+    padding: 15px
+}
+
+.input--light:focus {
+    border-bottom: solid $white 2px;
+    font-style: normal;
+}
+
+.input--title {
+    font-size: $font-size--title;
+}
+
+.input--large {
+    font-size: $font-size--large;
+}
+
+.textarea--small,
+.input--small {
+    font-size: $font-size--small;
+}
+
+.input-preview__src {
+    display: none;
+}
+
+.input-preview {
+    color: $grey-lighter;
+    border: dashed currentColor 0.175em;
+    border-radius: 0.5em;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    transition: ease-in-out 750ms;
+    cursor: pointer;
+}
+
+.input-preview::after {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    transform: translateY(50%);
+    color: currentColor;
+    content: "Choisir une photo de couverture...";
+    font-style: italic;
+    font-size: 1em;
+}
+
+.has-image::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(50, 50, 50, 0.5);
+    content: " ";
+    transition: ease-in-out 750ms;
+}
+
+.has-image::after {
+    content: "Changer la photo de couverture...";
+    color: $white;
+}
