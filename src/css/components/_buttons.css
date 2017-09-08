@@ -39,7 +39,7 @@ button,
     color: $grey;
     border: dashed currentColor 1px;
     transition: 350ms ease-in-out;
-
+    width: initial;
     &:hover,
     &:focus,
     &:active {
