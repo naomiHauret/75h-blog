@@ -33,6 +33,7 @@
     "gulp-uglify": "^3.0.0",
     "husky": "^0.14.3",
     "postcss-color-function": "^4.0.0",
+    "postcss-google-font": "^0.1.1",
     "precss": "^2.0.0",
     "pump": "^1.0.2"
   },

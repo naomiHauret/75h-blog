@@ -4,6 +4,7 @@ const rename = require("gulp-rename") // to rename files
 const postcss = require("gulp-postcss")
 const autoprefixer = require("autoprefixer") // Autoprefixer
 const precss = require("precss") // Sass-like features (imports, vars...)
+const googleFonts = require("postcss-google-font") // Google Fonts import
 const colorFunction = require("postcss-color-function") // color related functions
 const cssnano = require("cssnano") // CSS Minifier
 const uglify = require("gulp-uglify") // JS minifier
@@ -16,6 +17,7 @@ const pump = require("pump")
 */
 gulp.task("css", () => {
   const plugins = [
+    googleFonts(),
     precss(),
     colorFunction(),
     autoprefixer({ browsers: ["last 1 version"] }),

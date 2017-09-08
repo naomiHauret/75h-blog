@@ -6,6 +6,9 @@ input {
     min-width: 230px;
     transition: 0.5s;
     width: 100%;
+    font-family: inherit;
+    font-weight: inherit;
+
     &:focus {
         outline: none;
     }
