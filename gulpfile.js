@@ -6,7 +6,7 @@ const autoprefixer = require("autoprefixer") // Autoprefixer
 const precss = require("precss") // Sass-like features (imports, vars...)
 const googleFonts = require("postcss-google-font") // Google Fonts import
 const colorFunction = require("postcss-color-function") // color related functions
-const cssnano = require("cssnano") // CSS Minifier
+const csso = require("postcss-csso") // CSS Minifier
 const uglify = require("gulp-uglify") // JS minifier
 const concat = require("gulp-concat") // JS concat files
 const imagemin = require("gulp-imagemin") // Optimize images
@@ -21,7 +21,7 @@ gulp.task("css", () => {
     precss(),
     colorFunction(),
     autoprefixer({ browsers: ["last 1 version"] }),
-    cssnano() ]
+    csso() ]
   return gulp.src("src/css/main.css")
     .pipe(postcss(plugins))
     .pipe(rename("stylesheet.min.css"))
