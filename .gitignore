@@ -1,3 +1,5 @@
 node_modules/
 vendor/
+dist/assets/stylesheets/
+dist/assets/scripts/
 *.log
