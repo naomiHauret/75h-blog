@@ -4,7 +4,7 @@
     {% endblock overlay %}
     
     {% block img %}
-        <img src=" {{ src is defined ? src : placeholderCoverPath }} " alt="{{ alt is defined ? alt : 'Photo de couverture' }}" class="cover__src" />
+        <img src=" {{ src != NULL ? src : placeholderCoverPath }} " alt="{{ alt is defined ? alt : 'Photo de couverture' }}" class="cover__src" />
     {% endblock img %}
 
     {% block content %}{% endblock content %}

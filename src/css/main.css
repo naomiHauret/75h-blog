@@ -1,6 +1,3 @@
-@google-font Montserrat 200,300,400,500,600,italic;
-@google-font Lora 400,700,italic,bold;
-
 @import './helpers/**/*.css';
 @import './bases/**/*.css';
 @import './components/**/*.css';

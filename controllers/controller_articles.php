@@ -204,28 +204,28 @@
           $article_content= cleanString($_POST["article_content"]);
           $article_tagslist= cleanString($_POST["article_tagslist"]);
 
-          if(isset($_FILES["article_cover"]) && is_uploaded_file($_FILES["article_cover"]["tmp_name"]) ) { // check if user did send a cover picture or not
-            $article_coverpath= controller_upload_picture();
+          if(isset($_FILES["article_cover"]) ) { // check if user did send a cover picture or not
+            if(is_uploaded_file($_FILES["article_cover"]["tmp_name"])) {
+              $article_coverpath= controller_upload_picture();
 
-            if($article_coverpath <= -1 ) {
-              $result=-1;
-              $title="Photo de couverture non conforme!";
-              $message="Votre photo de couverture doit avoir un poids inférieur à 2MB et avoir l'un des formats suivants: JPEG, JPG, PNG, SVG.";
-              $_SESSION['error']=true;
-              unset($_SESSION['success']);
+              if($article_coverpath <= -1 ) {
+                $result=-1;
+                $title="Photo de couverture non conforme!";
+                $message="Votre photo de couverture doit avoir un poids inférieur à 2MB et avoir l'un des formats suivants: JPEG, JPG, PNG, SVG.";
+                $_SESSION['error']=true;
+                unset($_SESSION['success']);
+              }
+              else {
+                $result= model_edit_article($article_id, $article_title, $article_intro, $article_content, $article_tagslist, $article_coverpath); // add article to database
+              }
             }
             else {
+               $article_coverpath= NULL;
               $result= model_edit_article($article_id, $article_title, $article_intro, $article_content, $article_tagslist, $article_coverpath); // add article to database
-            }
+            } 
           }
         else {
-          if($article_coverpath  > -1) {
-            $article_coverpath= NULL;
-            $result= model_edit_article($article_id, $article_title, $article_intro, $article_content, $article_tagslist, $article_coverpath); // add article to database
-          }
-          else {
             $result = -1;
-          }
         }
           
           if (!$result) { // error

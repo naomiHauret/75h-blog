@@ -1,3 +1,6 @@
+@google-font Montserrat 200,300,400,500,600,italic;
+@google-font Lora 400,700,italic,bold;
+
 $serif: 'Lora';
 $sans-serif: 'Montserrat';
 $text--base: 16px;
