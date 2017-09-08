@@ -37,7 +37,7 @@ This will install all the dependencies of the project.
 
 - In your terminal, run the following command:
 ```
-npm prod
+npm run prod
 ```
 
 This will process all the assets (minify CSS and JS, optimize images...).
