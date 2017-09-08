@@ -32,14 +32,14 @@ gulp.task("css", () => {
   - JS
 */
 
-gulp.task('js', (cb) => {
+gulp.task("js", (cb) => {
   pump([
-        gulp.src("src/js/**/*.js"),
-        uglify(),
-        concat("global.min.js"),
-        gulp.dest('dist/assets/scripts')
-    ],
-    cb
+    gulp.src("src/js/**/*.js"),
+    uglify(),
+    concat("global.min.js"),
+    gulp.dest("dist/assets/scripts")
+  ],
+  cb
   )
 })
 
@@ -47,10 +47,10 @@ gulp.task('js', (cb) => {
   - Images
 */
 gulp.task("img", () =>
-    gulp.src("dist/assets/img/**/*")
-        .pipe(imagemin())
-        .pipe(gulp.dest("dist/assets/img/**/*"))
-);
+  gulp.src("dist/assets/img/**/*")
+    .pipe(imagemin())
+    .pipe(gulp.dest("dist/assets/img/**/*"))
+)
 
 /*
     - Watch & livereload

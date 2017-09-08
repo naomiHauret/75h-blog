@@ -4,11 +4,11 @@
   "description": "A simple MySQL/Twig/PostCSS/JS Blog",
   "main": "index.js",
   "scripts": {
-    "start": "npm build && gulp watch",
+    "start": "npm run build && gulp watch",
     "build": "gulp css && gulp js",
-    "prod": "npm build && gulp img",
-    "precommit": "npm prod",
-    "prepush": "npm precommit"
+    "prod": "npm run build && gulp img",
+    "precommit": "npm run prod",
+    "prepush": "npm run precommit"
   },
   "keywords": [
     "blog"
