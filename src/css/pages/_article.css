@@ -130,6 +130,11 @@
     }
 }
 
+.article-meta__intro,
+.article__body {
+    line-height: 1.85em;
+}
+
 .article__tags-wrapper {
     margin-top: 3em;
 }

@@ -30,6 +30,8 @@
     display: flex;
     flex-direction: column;
     justify-content: stretch;
+    line-height: 1.55em;
+    font-size: $font-size--small;
 }
 
 .article-thumbnail {
@@ -41,7 +43,6 @@
     cursor: pointer;
     display: flex;
     flex-direction: column;
-
     @media(--md) {
         max-width: 250px;
     }
